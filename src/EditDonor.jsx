@@ -16,7 +16,7 @@ const EditDonor = () => {
 
   useEffect(() => {
     // Fetch donor data based on the ID
-    fetch(`http://localhost:8000/donors/${id}`)
+    fetch(`https://dummyjson.com/users/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setFirstName(data.firstName);
@@ -35,7 +35,7 @@ const EditDonor = () => {
     const updatedDonor = { firstName, lastName, middleName, prefferedName, date, gender, bloodGroup };
 
     // Update the donor data
-    fetch(`http://localhost:8000/donors/${id}`, {
+    fetch(`https://dummyjson.com/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedDonor),

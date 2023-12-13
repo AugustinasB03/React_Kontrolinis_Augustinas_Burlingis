@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const DonorDetails = () => {
   const { id } = useParams();
-  const { data: donor, error, isPending } = useFetch('http://localhost:8000/donors/' + id);
+  const { data: donor, error, isPending } = useFetch('https://dummyjson.com/users/' + id);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    fetch('http://localhost:8000/donors/' + donor.id, {
+    fetch('https://dummyjson.com/users/' + donor.id, {
       method: 'DELETE'
     }).then(() => {
       navigate('/list');
@@ -22,6 +22,7 @@ const DonorDetails = () => {
       { error && <div>{ error }</div> }
       { donor && (
         <article>
+          <figure><img src={ donor.image } alt="image" /></figure>
           <h2>Gender: { donor.gender }</h2>
           <h2>Blood group: { donor.bloodGroup }</h2>
           <h2>First name: { donor.firstName }</h2>

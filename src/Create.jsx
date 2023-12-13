@@ -18,7 +18,7 @@ const Create = () => {
     e.preventDefault();
     const donor = { firstName, lastName, middleName, prefferedName, date, gender, bloodGroup };
 
-    fetch('http://localhost:8000/donors/', {
+    fetch('https://dummyjson.com/users/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(donor)

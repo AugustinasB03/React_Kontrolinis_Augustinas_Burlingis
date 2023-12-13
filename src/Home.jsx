@@ -2,7 +2,7 @@ import DonorList from "./DonorList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-  const { error, isPending, data: donors } = useFetch('http://localhost:8000/donors')
+  const { error, isPending, data: donors } = useFetch('https://dummyjson.com/users')
 
   return (
     <div className="home">
