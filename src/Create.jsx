@@ -24,7 +24,7 @@ const Create = () => {
       body: JSON.stringify(donor)
     }).then(() => {
       
-      navigate.push('/');
+      navigate('/list');
     })
   }
 

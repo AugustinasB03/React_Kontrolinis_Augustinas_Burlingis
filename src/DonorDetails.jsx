@@ -12,7 +12,7 @@ const DonorDetails = () => {
     fetch('http://localhost:8000/donors/' + donor.id, {
       method: 'DELETE'
     }).then(() => {
-      navigate.push('/');
+      navigate('/list');
     }) 
   }
 
